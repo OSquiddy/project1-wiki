@@ -23,11 +23,12 @@ def entry(request, entryName):
         return render(request, "encyclopedia/404.html")
     html = markdown_path(f"entries/{entryName}.md")
     return render(request, f"encyclopedia/{entryName}.html", {
-        "info" : information
+        "info" : html
     }) 
     
 
 def new_search(request):
+    print(request.GET) 
     print(request.GET.__getitem__('q'))
     information = util.get_entry(request.GET.__getitem__('q'))
     print(information)
@@ -35,7 +36,7 @@ def new_search(request):
         return render(request, "encyclopedia/404.html")
     html = markdown_path(f"entries/{request.GET.__getitem__('q')}.md")
     return render(request, f"encyclopedia/{request.GET.__getitem__('q')}.html", {
-        "info" : information
+        "info" : html
     })
 
 
