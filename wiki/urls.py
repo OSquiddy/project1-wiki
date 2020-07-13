@@ -20,5 +20,3 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include("encyclopedia.urls"))
 ]
-
-# handler404 = 'encyclopedia.views.handler_404'

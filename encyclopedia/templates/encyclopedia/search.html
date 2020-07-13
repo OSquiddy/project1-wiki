@@ -5,12 +5,12 @@
 {% endblock %}
 
 {% block body %}
-    <h2>Search Result for {{query}}</h2>
+    <h2>Search Result for '{{query}}'</h2>
     <ul>
         {% for entry in entries %}
-            {% if query in entry %}
-                <li><a href="{% url 'page:'|add:entry|lower %}">{{entry}}</a></li>
-            {% endif %}
+        <li><a href="{% url 'page:entry' entry|lower %}">{{entry}}</a></li>
         {% endfor %}
     </ul>
-{% endblock &}
+{% endblock %}
+
+
