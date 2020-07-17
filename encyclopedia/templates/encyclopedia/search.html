@@ -5,12 +5,14 @@
 {% endblock %}
 
 {% block body %}
-    <h2>Search Result for '{{query}}'</h2>
-    <ul>
+    <div class="content">
+        <h2>Search Result for '{{query}}'</h2>
+        <ul>
         {% for entry in entries %}
         <li><a href="{% url 'page:entry' entry|lower %}">{{entry}}</a></li>
         {% endfor %}
-    </ul>
+        </ul>
+    </div>
 {% endblock %}
 
 

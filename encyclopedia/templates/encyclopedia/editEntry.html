@@ -1,0 +1,28 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    {{Title}}
+{% endblock %}
+
+{% block body %}
+    {% if status == 1 %}
+        <div class="message">
+            The entry has been deleted.
+            <div id="button"><a href="{% url 'page:index' %}"><button class="btn btn-primary">Home</button></a></div>
+        </div>
+        
+    {% else %}
+    <h2>Edit Entry</h2>
+    <form method="POST">
+        {% csrf_token %}
+        {% for field in form.visible_fields %}
+            {{field.label_tag}}
+            <br>
+            {{field}}
+            <br>
+        {% endfor %}
+        <button name="save" value="1" class="btn btn-primary">Submit</button>
+        <button name="delete" value="2" class="btn btn-danger">Delete Entry</button>
+    </form>
+    {% endif %}
+{% endblock %}

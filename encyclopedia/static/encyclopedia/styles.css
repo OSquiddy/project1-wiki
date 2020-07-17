@@ -9,13 +9,8 @@ code {
     white-space: pre;
 }
 
-h1 {
-    margin-top: 0px;
-    padding-top: 20px;
-}
-
 textarea {
-    height: 90vh;
+    height: 200px;
     width: 80%;
 }
 
@@ -24,9 +19,14 @@ textarea {
 }
 
 .search {
+    margin: 3px 0;
     width: 100%;
     font-size: 15px;
     line-height: 15px;
+}
+
+.sidebar-link {
+    margin: 3px 0;
 }
 
 .sidebar {
@@ -37,4 +37,27 @@ textarea {
 
 .sidebar h2 {
     margin-top: 5px;
+}
+
+.message {
+    margin-top: 20px;
+}
+
+.message #button {
+    margin-top: 10px;
+}
+
+.content {
+    margin-top: 12px;
+    min-height: 85vh;
+}
+.navigation {
+    display: flex;
+    float: right;
+}
+
+#editButton {
+    text-decoration: none;
+    color: white;
+    margin: 0 4px;
 }

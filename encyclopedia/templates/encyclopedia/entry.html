@@ -7,3 +7,11 @@
 {% block body %}
     {{info|safe}}
 {% endblock %}
+
+{% block nav %}
+<div class="navigation">
+    <a id="editButton" href="{% url 'page:edit' title|lower %}"><button class="btn btn-primary">Edit</button></a>
+    <a id="editButton" href="{% url 'page:delete' title|lower %}"><button class="btn btn-danger">Delete</button></a>
+</div>
+
+{% endblock %}

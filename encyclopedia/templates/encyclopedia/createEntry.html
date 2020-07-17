@@ -1,0 +1,29 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Create Entry
+{% endblock %}
+
+{% block body %}
+    {% if status == 1 %}
+        <div class="message">
+            The file has been saved!
+            <div id="button"><a href="{% url 'page:index' %}"><button class="btn btn-primary">Home</button></a></div>
+        </div>
+        
+    {% elif status == 2 %}
+        Error: There already exists a file with that name!
+    {% else %}
+    <h2>Create Entry</h2>
+    <form method="POST">
+        {% csrf_token %}
+        {% for field in form.visible_fields %}
+            {{field.label_tag}}
+            <br>
+            {{field}}
+            <br>
+        {% endfor %}
+        <button class="btn btn-primary">Submit</button>
+    </form>
+    {% endif %}
+{% endblock %}

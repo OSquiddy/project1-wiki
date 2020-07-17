@@ -15,22 +15,25 @@
                 <form action="{% url 'page:search' %}" method="GET">
                     <input class="search" type="text" name="q" placeholder="Search Encyclopedia">
                 </form>
-                <div>
+                <div class="sidebar-link">
                     <a href="{% url 'page:index' %}">Home</a>
                 </div>
-                <div>
-                    Create New Page
+                <div class="sidebar-link">
+                    <a href="{% url 'page:create' %}">Create New Page</a> 
                 </div>
-                <div>
+                <div class="sidebar-link">
                     <a href="{% url 'page:random' %}">Random Page</a> 
                 </div>
-                {% block nav %}
-                {% endblock %}
+                
             </div>
-            <div class="main col-lg-9 col-md-9">
-                {% block body %}
-                {% endblock %}
-            </div>
+                <div class="main col-lg-9 col-md-9">
+                    <div class="content">
+                        {% block body %}
+                        {% endblock %}
+                    </div>
+                    {% block nav %}
+                    {% endblock %}
+                </div>
         </div>
 
     </body>
